@@ -41,6 +41,8 @@ jobs:
         with:
           aws-region: ap-northeast-1
           role-to-assume: arn:aws:iam::703671935472:role/soccer-match-simulator-AI_role
+          role-session-name: GitHubActions-${{ github.run_id }}
+          role-skip-session-tagging: true
 
       - name: Deploy
         run: |
