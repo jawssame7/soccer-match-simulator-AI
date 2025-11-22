@@ -12,7 +12,8 @@
     "sam:start": "sam local start-api --env-vars env.json --port 3001",
     "sam:invoke": "sam local invoke MatchSimulatorFunction --event events/test-event.json --env-vars env.json",
     "sam:build": "sam build",
-    "sam:deploy": "sam deploy --guided"
+    "sam:deploy": "sam deploy --guided",
+    "sam:deploy:auto": "sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --parameter-overrides GeminiApiKey=${GEMINI_API_KEY}"
   },
   "keywords": [
     "soccer",
