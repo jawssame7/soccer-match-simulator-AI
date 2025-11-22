@@ -1,0 +1,31 @@
+{
+  "name": "soccer-match-simulator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Soccer Match Simulator - AI-powered soccer match simulation",
+  "scripts": {
+    "dev:frontend": "pnpm --filter frontend start",
+    "dev:backend": "pnpm --filter backend watch",
+    "build:frontend": "pnpm --filter frontend build",
+    "build:backend": "pnpm --filter backend build",
+    "build": "pnpm build:frontend && pnpm build:backend",
+    "format": "biome format --write .",
+    "lint": "biome lint --write .",
+    "check": "biome check --write .",
+    "sam:start": "pnpm --filter backend sam:start",
+    "sam:invoke": "pnpm --filter backend sam:invoke",
+    "sam:build": "pnpm --filter backend sam:build",
+    "sam:deploy": "pnpm --filter backend sam:deploy"
+  },
+  "keywords": [
+    "soccer",
+    "simulator",
+    "ai",
+    "gemini"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.5"
+  }
+}

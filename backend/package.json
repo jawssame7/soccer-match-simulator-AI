@@ -1,0 +1,37 @@
+{
+  "name": "soccer-match-simulator-backend",
+  "version": "1.0.0",
+  "description": "Backend Lambda function for Soccer Match Simulator",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "package": "npm run build && zip -r function.zip dist node_modules",
+    "deploy": "npm run package && aws lambda update-function-code --function-name soccer-match-simulator --zip-file fileb://function.zip",
+    "sam:start": "sam local start-api --env-vars env.json --port 3001",
+    "sam:invoke": "sam local invoke MatchSimulatorFunction --event events/test-event.json --env-vars env.json",
+    "sam:build": "sam build",
+    "sam:deploy": "sam deploy --guided"
+  },
+  "keywords": [
+    "soccer",
+    "simulator",
+    "lambda",
+    "gemini"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^1.30.0",
+    "@google/generative-ai": "^0.2.1",
+    "aws-lambda": "^1.0.7",
+    "zod": "^3.25.76",
+    "zod-to-json-schema": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.131",
+    "@types/node": "^20.11.5",
+    "typescript": "^5.3.3"
+  }
+}

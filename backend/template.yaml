@@ -1,0 +1,47 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Soccer Match Simulator API
+
+Globals:
+  Function:
+    Timeout: 60
+    MemorySize: 512
+    Runtime: nodejs22.x
+    Architectures:
+      - x86_64
+  Api:
+    Cors:
+      AllowMethods: "'POST, OPTIONS'"
+      AllowHeaders: "'Content-Type'"
+      AllowOrigin: "'*'"
+
+Resources:
+  MatchSimulatorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./
+      Handler: dist/index.handler
+      Environment:
+        Variables:
+          GEMINI_API_KEY: !Ref GeminiApiKey
+      Events:
+        SimulateMatch:
+          Type: Api
+          Properties:
+            Path: /simulate-match
+            Method: post
+
+Parameters:
+  GeminiApiKey:
+    Type: String
+    Description: Gemini API Key
+    NoEcho: true
+    Default: ''
+
+Outputs:
+  MatchSimulatorApi:
+    Description: "API Gateway endpoint URL for Prod stage"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/simulate-match/"
+  MatchSimulatorFunction:
+    Description: "Lambda Function ARN"
+    Value: !GetAtt MatchSimulatorFunction.Arn

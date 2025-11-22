@@ -1,0 +1,8 @@
+{
+  "httpMethod": "POST",
+  "path": "/simulate-match",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"homeTeam\":{\"name\":\"Manchester City\",\"manager\":\"Pep Guardiola\",\"formation\":\"4-3-3\",\"players\":[{\"name\":\"Ederson\",\"position\":\"GK\"},{\"name\":\"Kyle Walker\",\"position\":\"DF\"},{\"name\":\"Ruben Dias\",\"position\":\"DF\"},{\"name\":\"Nathan Ake\",\"position\":\"DF\"},{\"name\":\"Josko Gvardiol\",\"position\":\"DF\"},{\"name\":\"Rodri\",\"position\":\"MF\"},{\"name\":\"Kevin De Bruyne\",\"position\":\"MF\"},{\"name\":\"Bernardo Silva\",\"position\":\"MF\"},{\"name\":\"Phil Foden\",\"position\":\"FW\"},{\"name\":\"Erling Haaland\",\"position\":\"FW\"},{\"name\":\"Jack Grealish\",\"position\":\"FW\"}]},\"awayTeam\":{\"name\":\"Arsenal\",\"manager\":\"Mikel Arteta\",\"formation\":\"4-3-3\",\"players\":[{\"name\":\"David Raya\",\"position\":\"GK\"},{\"name\":\"Ben White\",\"position\":\"DF\"},{\"name\":\"William Saliba\",\"position\":\"DF\"},{\"name\":\"Gabriel Magalhaes\",\"position\":\"DF\"},{\"name\":\"Oleksandr Zinchenko\",\"position\":\"DF\"},{\"name\":\"Declan Rice\",\"position\":\"MF\"},{\"name\":\"Martin Odegaard\",\"position\":\"MF\"},{\"name\":\"Kai Havertz\",\"position\":\"MF\"},{\"name\":\"Bukayo Saka\",\"position\":\"FW\"},{\"name\":\"Gabriel Jesus\",\"position\":\"FW\"},{\"name\":\"Gabriel Martinelli\",\"position\":\"FW\"}]}}"
+}
