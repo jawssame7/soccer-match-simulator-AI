@@ -26,14 +26,12 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        working-directory: frontend
         run: pnpm install --frozen-lockfile
 
       - name: Build frontend
-        working-directory: frontend
         env:
           VITE_API_ENDPOINT: ${{ secrets.VITE_API_ENDPOINT }}
-        run: pnpm run build
+        run: pnpm --filter soccer-match-simulator-frontend run build
 
       - uses: aws-actions/configure-aws-credentials@v4
         with:
