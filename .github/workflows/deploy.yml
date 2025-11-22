@@ -42,7 +42,7 @@ jobs:
 
       - name: Deploy
         run: |
-          aws s3 sync --exact-timestamps --delete frontend/dist s3://jawssame7-soccer-match-simulator-ai
+          aws s3 sync --exact-timestamps --delete frontend/build s3://jawssame7-soccer-match-simulator-ai
 
       - name: Clear Cache
         run: |
