@@ -35,4 +35,3 @@ yarn-error.log*
 pnpm-debug.log*
 
 # pnpm
-pnpm-lock.yaml
