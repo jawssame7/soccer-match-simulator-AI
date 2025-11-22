@@ -11,7 +11,7 @@ Globals:
       - x86_64
   Api:
     Cors:
-      AllowMethods: "'POST, OPTIONS'"
+      AllowMethods: "'POST,OPTIONS'"
       AllowHeaders: "'Content-Type'"
       AllowOrigin: "'*'"
 
@@ -41,7 +41,7 @@ Parameters:
 Outputs:
   MatchSimulatorApi:
     Description: "API Gateway endpoint URL for Prod stage"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/simulate-match/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/simulate-match"
   MatchSimulatorFunction:
     Description: "Lambda Function ARN"
     Value: !GetAtt MatchSimulatorFunction.Arn
